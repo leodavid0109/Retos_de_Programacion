@@ -5,14 +5,18 @@
  - Imprime el cálculo del área de un polígono de cada tipo.
  """
 
-def area(poligono):
-    lados = len(poligono)
+# Se recibirá el nombre del poligono y los datos en un arreglo
+def area(tipo_poligono, datos):
+    if tipo_poligono == "Triángulo":
+        print("Área: ", datos[0] * datos[1] / 2)
+    elif tipo_poligono == "Rectángulo":
+        print("Área: ", datos[0] * datos[1])
+    elif tipo_poligono == "Cuadrado":
+        print("Área: ", datos[0] ** 2)
+    else:
+        print("El polígono ingresado no es soportado")
 
-    suma = 0
-    for i in range(lados):
-        suma += lados[i]
-
-    if lados == 3:
-        print(suma / 2)
-    elif lados == 4:
-        print(suma)
+area("Triángulo", [2, 2])
+area("Cuadrado", [1])
+area("Rectángulo", [5, 4])
+area("Hexágono", [5, 4, 5, 56])
